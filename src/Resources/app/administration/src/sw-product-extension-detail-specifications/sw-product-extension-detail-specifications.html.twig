@@ -1,5 +1,5 @@
 {% block sw_product_detail_specifications_measures_packaging %}
-        <sw-card title="Starting Aid Test">
+        <sw-card v-if="startingAidData" title="Starting Aid Test">
             <sw-text-field
                 v-model:value="product.extensions.startingAidData.headline"
                 class="sw-product-starting-aid__headline-field"

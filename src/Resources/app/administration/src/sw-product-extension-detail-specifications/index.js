@@ -1,5 +1,5 @@
-const {Criteria} = Shopware.Data;
 const {Component} = Shopware;
+const {Criteria} = Shopware.Data;
 const Context = Shopware.Context;
 
 import template from "./sw-product-extension-detail-specifications.html.twig";
@@ -8,7 +8,7 @@ Component.override('sw-product-detail-specifications', {
     template,
 
     inject: [
-        'acl', 'repositoryFactory'
+        'repositoryFactory'
     ],
 
     data() {
@@ -50,13 +50,13 @@ Component.override('sw-product-detail-specifications', {
                     } else {
                         console.log('Create and Set New Entity');
                         this.startingAidData = this.createAndSetNewEntity();
-                        this.product.extensions.startingAidData = this.startingAidData;
+                        this.product.extensions.startingAidData = this.createAndSetNewEntity();
                     }
-                    this.isLoading = false; // This should be false to indicate loading is finished
+                    this.isLoading = false;
                 })
                 .catch(error => {
                     console.error('Error loading extension:', error);
-                    this.isLoading = false; // Handle the loading state properly on error
+                    this.isLoading = false;
                 });
         },
 
@@ -64,7 +64,7 @@ Component.override('sw-product-detail-specifications', {
             console.log('setting new entity')
             const startingAidData = this.wucPluginStartingAidExtensionRepository.create(Context.api);
             if (startingAidData) {
-                startingAidData.headline = 'New Entity Headline';
+                startingAidData.headline = 'Default headline';
                 return startingAidData;
             } else {
                 console.error('Failed to create a new entity');
