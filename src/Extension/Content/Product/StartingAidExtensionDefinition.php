@@ -10,7 +10,8 @@ use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\IdField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\OneToOneAssociationField;
-use Shopware\Core\Framework\DataAbstractionLayer\Field\StringField;
+use Shopware\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
+use Shopware\Core\Framework\DataAbstractionLayer\Field\TranslationsAssociationField;
 use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
 
 class StartingAidExtensionDefinition extends EntityDefinition
@@ -32,9 +33,15 @@ class StartingAidExtensionDefinition extends EntityDefinition
         return new FieldCollection([
             (new IdField('id', 'Id'))->addFlags(new Required(), new PrimaryKey(), new ApiAware()),
             (new FkField('product_id', 'productId', ProductDefinition::class))->addFlags(new ApiAware()),
-            (new StringField('headline', 'headline'))->addFlags(new ApiAware()),
+            (new TranslatedField('headline'))->addFlags(new ApiAware(), new Required()),
 
-            new OneToOneAssociationField('product', 'product_id', 'id', ProductDefinition::class, false)
+            new OneToOneAssociationField('product', 'product_id', 'id', ProductDefinition::class, false),
+            (new TranslationsAssociationField(
+                StartingAidTranslationDefinition::class,
+                'wuc_plugin_starting_aid_id'
+            ))->addFlags(new ApiAware(), new Required())
+
+
         ]);
     }
 }

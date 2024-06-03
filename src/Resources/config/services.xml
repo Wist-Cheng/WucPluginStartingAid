@@ -12,5 +12,9 @@
         <service id="WucPluginStartingAid\Extension\Content\Product\StartingAidExtensionDefinition">
             <tag name="shopware.entity.definition" entity="wuc_plugin_starting_aid_extension" />
         </service>
+
+        <service id="WucPluginStartingAid\Core\Content\StartingAid\Aggregate\StartingAidTranslation\StartingAidTranslationDefinition">
+            <tag name="shopware.entity.definition" entity="wuc_plugin_starting_aid_translation" />
+        </service>
     </services>
 </container>

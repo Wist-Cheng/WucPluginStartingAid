@@ -23,7 +23,6 @@ class StartingAidExtensionEntity extends Entity
 
     protected ?ProductEntity $product = null;
 
-
     /**
      * @return string|null
      */
