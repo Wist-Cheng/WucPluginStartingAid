@@ -2,6 +2,7 @@
 
 namespace WucPluginStartingAid\Extension\Content\Product;
 
+use Shopware\Core\Content\Product\ProductEntity;
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 
@@ -19,6 +20,9 @@ class StartingAidExtensionEntity extends Entity
      * @var string|null
      */
     protected $productId;
+
+    protected ?ProductEntity $product = null;
+
 
     /**
      * @return string|null
@@ -50,5 +54,15 @@ class StartingAidExtensionEntity extends Entity
     public function setProductId(?string $productId): void
     {
         $this->productId = $productId;
+    }
+
+    public function getProduct(): ?ProductEntity
+    {
+        return $this->product;
+    }
+
+    public function setProduct(ProductEntity $product): void
+    {
+        $this->product = $product;
     }
 }
