@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="WucPluginStartingAid\Extension\Content\Product\StartingAidExtension">
+            <tag name="shopware.entity.extension"/>
+        </service>
+
+        <service id="WucPluginStartingAid\Extension\Content\Product\StartingAidExtensionDefinition">
+            <tag name="shopware.entity.definition" entity="wuc_plugin_starting_aid_extension" />
+        </service>
+    </services>
+</container>

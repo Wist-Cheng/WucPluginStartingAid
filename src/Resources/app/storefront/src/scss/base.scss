@@ -1,0 +1,46 @@
+.wuc-catalogue-box {
+
+    .wuc-catalogue-headline {
+        color: $sw-color-brand-primary;
+    }
+
+    .wuc-catalogue-product-name {
+        color: $sw-text-color;
+    }
+
+    .wuc-catalogue-subtitle {
+        color: $sw-text-color;
+    }
+
+    .wuc-catalogue-benefits-list {
+        margin-top: 0.8rem;
+        list-style-type: none;
+        padding: 0 0 0 0.8rem;
+    }
+
+    .wuc-catalogue-benefits-list li {
+        padding-left: 6px;
+
+        &::marker {
+            content: '✓';
+            font-size: 18px;
+            color: $sw-color-brand-primary;
+        }
+    }
+
+    .wuc-catalogue-actions {
+        margin-top: 0.8rem;
+    }
+
+    .wuc-catalogue-product-number {
+        margin-top: 0.8rem;
+
+        span {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.4rem;
+            background-color: #f9f9f9;
+            border: 1px solid $border-color;
+            border-radius: $border-radius;
+        }
+    }
+}
