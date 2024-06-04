@@ -40,13 +40,15 @@ Component.override('sw-product-detail-specifications', {
                 .then(startingAidData => {
                     if (startingAidData.last()) {
                         console.log('Data found', startingAidData.last());
-                        this.product.extensions.startingAidData = startingAidData.last();
+                        this.product.extensions.wucPluginStartingAidExtension = startingAidData.last();
                     } else {
                         console.log('Create and Set New Entity');
                         this.startingAidData = this.wucPluginStartingAidExtensionRepository.create(Shopware.Context.api);
                         this.startingAidData.productId = this.productId;
                         this.startingAidData.headline = 'Test!'
-                        this.product.extensions.startingAidData = this.startingAidData;
+                        this.product.extensions.wucPluginStartingAidExtension = this.startingAidData;
+
+                        console.log(this.product.extensions.wucPluginStartingAidExtension);
                     }
                 })
                 .catch(error => {

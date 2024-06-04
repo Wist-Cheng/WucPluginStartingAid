@@ -7,20 +7,20 @@ use WucPluginStartingAid\Extension\Content\Product\StartingAidExtensionEntity;
 
 class StartingAidTranslationEntity extends TranslationEntity
 {
-    protected string $wucStartingAidExtensionId;
+    protected string $wucPluginStartingAidExtensionId;
 
     protected ?string $headline;
 
     protected StartingAidExtensionEntity $startingAidExtension;
 
-    public function getWucStartingAidExtensionId(): string
+    public function getWucPluginStartingAidExtensionId(): string
     {
-        return $this->wucStartingAidExtensionId;
+        return $this->wucPluginStartingAidExtensionId;
     }
 
-    public function setWucStartingAidExtensionId(string $wucStartingAidExtensionId): void
+    public function setWucPluginStartingAidExtensionId(string $wucPluginStartingAidExtensionId): void
     {
-        $this->wucStartingAidExtensionId = $wucStartingAidExtensionId;
+        $this->wucPluginStartingAidExtensionId = $wucPluginStartingAidExtensionId;
     }
 
     public function getHeadline(): ?string
