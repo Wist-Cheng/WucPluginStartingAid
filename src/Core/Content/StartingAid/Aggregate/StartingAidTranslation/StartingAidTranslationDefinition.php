@@ -6,7 +6,7 @@ use Shopware\Core\Framework\DataAbstractionLayer\EntityTranslationDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
-use WucPluginStartingAid\Extension\Content\Product\StartingAidExtensionEntity;
+use WucPluginStartingAid\Extension\Content\Product\StartingAidExtensionDefinition;
 
 class StartingAidTranslationDefinition extends EntityTranslationDefinition
 {
@@ -19,12 +19,12 @@ class StartingAidTranslationDefinition extends EntityTranslationDefinition
 
     public function getEntityClass(): string
     {
-        return StartingAidExtensionEntity::class;
+        return StartingAidTranslationEntity::class;
     }
 
     public function getParentDefinitionClass(): string
     {
-        return StartingAidTranslationEntity::class;
+        return StartingAidExtensionDefinition::class;
     }
 
     protected function defineFields(): FieldCollection
