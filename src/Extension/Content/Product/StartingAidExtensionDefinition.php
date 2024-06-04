@@ -39,7 +39,7 @@ class StartingAidExtensionDefinition extends EntityDefinition
             new OneToOneAssociationField('product', 'product_id', 'id', ProductDefinition::class, false),
             (new TranslationsAssociationField(
                 StartingAidTranslationDefinition::class,
-                'wuc_plugin_starting_aid_id'
+                'wuc_plugin_starting_aid_extension_id'
             ))->addFlags(new ApiAware(), new Required())
 
 
