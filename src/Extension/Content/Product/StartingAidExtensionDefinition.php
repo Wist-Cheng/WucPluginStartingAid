@@ -17,7 +17,7 @@ use WucPluginStartingAid\Core\Content\StartingAid\Aggregate\StartingAidTranslati
 
 class StartingAidExtensionDefinition extends EntityDefinition
 {
-    public const ENTITY_NAME = 'wuc_plugin_starting_aid_extension';
+    public const ENTITY_NAME = 'starting_aid_extension';
 
     public function getEntityName(): string
     {
@@ -32,14 +32,14 @@ class StartingAidExtensionDefinition extends EntityDefinition
     protected function defineFields(): FieldCollection
     {
         return new FieldCollection([
-            (new IdField('id', 'Id'))->addFlags(new Required(), new PrimaryKey(), new ApiAware()),
+            (new IdField('id', 'id'))->addFlags(new Required(), new PrimaryKey(), new ApiAware()),
             (new FkField('product_id', 'productId', ProductDefinition::class))->addFlags(new ApiAware()),
             (new TranslatedField('headline'))->addFlags(new ApiAware(), new Required()),
 
             new OneToOneAssociationField('product', 'product_id', 'id', ProductDefinition::class, false),
             (new TranslationsAssociationField(
                 StartingAidTranslationDefinition::class,
-                'wuc_plugin_starting_aid_extension_id'
+                'starting_aid_extension_id'
             ))->addFlags(new ApiAware(), new Required())
 
 

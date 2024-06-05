@@ -29,7 +29,7 @@ Component.override('sw-product-detail-specifications', {
         },
 
         wucPluginStartingAidExtensionRepository() {
-            return this.repositoryFactory.create('wuc_plugin_starting_aid_extension');
+            return this.repositoryFactory.create('starting_aid_extension');
         }
     },
 
@@ -40,15 +40,15 @@ Component.override('sw-product-detail-specifications', {
                 .then(startingAidData => {
                     if (startingAidData.last()) {
                         console.log('Data found', startingAidData.last());
-                        this.product.extensions.wucPluginStartingAidExtension = startingAidData.last();
+                        this.product.extensions.startingAidExtension = startingAidData.last();
                     } else {
                         console.log('Create and Set New Entity');
                         this.startingAidData = this.wucPluginStartingAidExtensionRepository.create(Shopware.Context.api);
                         this.startingAidData.productId = this.productId;
                         this.startingAidData.headline = 'Test!'
-                        this.product.extensions.wucPluginStartingAidExtension = this.startingAidData;
+                        this.product.extensions.startingAidExtension = this.startingAidData;
 
-                        console.log(this.product.extensions.wucPluginStartingAidExtension);
+                        console.log(this.product.extensions.startingAidExtension);
                     }
                 })
                 .catch(error => {

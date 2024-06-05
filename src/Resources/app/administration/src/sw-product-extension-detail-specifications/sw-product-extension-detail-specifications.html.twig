@@ -1,9 +1,9 @@
 {% block sw_product_detail_specifications_measures_packaging %}
-        <sw-card  v-if="product.extensions.wucPluginStartingAidExtension" title="Starting Aid Test"
+        <sw-card  v-if="product.extensions.startingAidExtension" title="Starting Aid Test"
                   position-identifier="sw-product-detail-specifications-starting-aid"
         >
             <sw-text-field
-                v-model:value="product.extensions.wucPluginStartingAidExtension.headline"
+                v-model:value="product.extensions.startingAidExtension.headline"
                 class="sw-product-starting-aid__headline-field"
                 label="Starting Aid Test"
                 placeholder="Enter headline"

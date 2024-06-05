@@ -21,8 +21,8 @@
     "shopware-plugin-class": "WucPluginStartingAid\\WucPluginStartingAid",
     "copyright": "Acme",
     "label": {
-      "de-DE": "WucPluginStartingAid",
-      "en-GB": "WucPluginStartingAid"
+      "de-DE": "Starthilfe",
+      "en-GB": "Starting Aid"
     },
     "description": {
       "de-DE": "Some plugin description",

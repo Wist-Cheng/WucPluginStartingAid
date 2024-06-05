@@ -25,8 +25,8 @@ class WucPluginStartingAid extends Plugin
         $connection = $this->container->get(Connection::class);
 
         $sql = <<<SQL
-            DROP TABLE IF EXISTS `wuc_plugin_starting_aid_extension_translation`;
-            DROP TABLE IF EXISTS `wuc_plugin_starting_aid_extension`;
+            DROP TABLE IF EXISTS `starting_aid_extension_translation`;
+            DROP TABLE IF EXISTS `starting_aid_extension`;
         SQL;
 
         $connection->executeStatement($sql);

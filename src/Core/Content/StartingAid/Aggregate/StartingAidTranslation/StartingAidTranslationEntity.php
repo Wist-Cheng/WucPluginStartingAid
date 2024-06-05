@@ -7,20 +7,20 @@ use WucPluginStartingAid\Extension\Content\Product\StartingAidExtensionEntity;
 
 class StartingAidTranslationEntity extends TranslationEntity
 {
-    protected string $wucPluginStartingAidExtensionId;
+    protected string $startingAidExtensionId;
 
     protected ?string $headline;
 
     protected StartingAidExtensionEntity $startingAidExtension;
 
-    public function getWucPluginStartingAidExtensionId(): string
+    public function getStartingAidExtensionId(): string
     {
-        return $this->wucPluginStartingAidExtensionId;
+        return $this->startingAidExtensionId;
     }
 
-    public function setWucPluginStartingAidExtensionId(string $wucPluginStartingAidExtensionId): void
+    public function setStartingAidExtensionId(string $startingAidExtensionId): void
     {
-        $this->wucPluginStartingAidExtensionId = $wucPluginStartingAidExtensionId;
+        $this->startingAidExtensionId = $startingAidExtensionId;
     }
 
     public function getHeadline(): ?string
@@ -33,7 +33,7 @@ class StartingAidTranslationEntity extends TranslationEntity
         $this->headline = $headline;
     }
 
-    public function getStartingAidExtension(): StartingAidExtensionEntity
+    public function getStartingAidExtension(): ?StartingAidExtensionEntity
     {
         return $this->startingAidExtension;
     }

@@ -10,11 +10,16 @@ use WucPluginStartingAid\Extension\Content\Product\StartingAidExtensionDefinitio
 
 class StartingAidTranslationDefinition extends EntityTranslationDefinition
 {
-    public const ENTITY_NAME = 'wuc_plugin_starting_aid_translation';
+    public const ENTITY_NAME = 'starting_aid_extension_translation';
 
     public function getEntityName(): string
     {
         return self::ENTITY_NAME;
+    }
+
+    public function getCollectionClass(): string
+    {
+        return StartingAidTranslationCollection::class;
     }
 
     public function getEntityClass(): string

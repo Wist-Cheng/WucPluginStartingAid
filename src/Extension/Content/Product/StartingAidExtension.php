@@ -10,7 +10,7 @@ use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
 
 class StartingAidExtension extends EntityExtension
 {
-    public const EXTENSION_NAME = 'wucPluginStartingAidExtension';
+    public const EXTENSION_NAME = 'startingAidExtension';
 
     public function extendFields(FieldCollection $collection): void
     {
@@ -22,6 +22,7 @@ class StartingAidExtension extends EntityExtension
                 StartingAidExtensionDefinition::class,
                 true))->addFlags(new ApiAware()),
         );
+
     }
 
     public function getDefinitionClass(): string
